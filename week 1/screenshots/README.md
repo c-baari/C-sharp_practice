@@ -1,91 +1,57 @@
-## Screenshot one
-# C# Student Information Form
+### Screenshot one
 
-This program collects student information from TextBoxes and displays it in a Label. It also provides a **Clear** button to reset all fields.
+## String variable in a Message Box:
+This code runs when **Button 1** is clicked and displays `"Jamhuuriya University"` in `textBox2`.
 
 ```csharp
-private void btnshow_Click(object sender, EventArgs e)
+private void button1_Click(object sender, EventArgs e)
 {
-    String fname, department;
-    int id, semester;
-
-    fname = txtname.Text;
-    department = txtdept.Text;
-    id = int.Parse(txtid.Text);
-    semester = int.Parse(txtsemester.Text);
-
-    lbloutput.Text = "Name: " + fname +
-                     " Department: " + department +
-                     " ID: " + id +
-                     " Semester: " + semester;
-}
-
-private void btnclear_Click(object sender, EventArgs e)
-{
-    txtname.Clear();
-    txtdept.Clear();
-    txtid.Clear();
-    txtsemester.Clear();
-    lbloutput.Text = "";
+    String productDescription = "Jamhuuriya University";
+    textBox2.Text = productDescription;
 }
 ```
 
 ### How It Works
 
-**Show Button (`btnshow_Click`)**
+* `button1_Click` → Event handler for the button click.
+* `String productDescription` → Creates a string variable.
+* `"Jamhuuriya University"` → Value stored in the variable.
+* `textBox2.Text` → Displays the value inside the TextBox.
+* `object sender` → Identifies the object that triggered the event.
+* `EventArgs e` → Provides event information.
 
-* Gets name and department from TextBoxes.
-* Converts ID and semester from text to integers.
-* Displays all information in `lbloutput`.
+### Output
 
-**Clear Button (`btnclear_Click`)**
-
-* `.Clear()` removes text from each TextBox.
-* `lbloutput.Text = ""` clears the output Label.
-
-### Example Output
+When **Btndisplay** is clicked:
 
 ```text
-Name: Ali Department: IT ID: 101 Semester: 2
+Jamhuuriya University
 ```
 
-## Screenshot one
-# C# Date Display Form
 
-This program collects date information, displays the complete date, clears the fields, and closes the form.
+### Screenshot two
+
+## # C# String Concatenation
+
+This code demonstrates how to **join two strings together** and display the result using a `MessageBox`.
 
 ```csharp
-private void btnshowoutput_Click(object sender, EventArgs e)
-{
-    String day_of_the_week = txtdayoftheweek.Text;
-    String name_of_the_month = txtdayofthemonth.Text;
-    String day_of_the_month = txtmonth.Text;
-    int year = int.Parse(txtyear.Text);
+String messsage;
 
-    String full_date = day_of_the_week + " " +
-                       name_of_the_month + " " +
-                       day_of_the_month + " " + year;
+messsage = "Jamhuuriyа" + " University";
 
-    lbloutput.Text = full_date;
-}
+MessageBox.Show(messsage);
 ```
 
-### Buttons
+### How It Works
 
-* **Show Output** → Reads the date values and displays the full date in `lbloutput`.
-* **Clear** → Clears all TextBoxes and the output Label.
-* **Close** → `this.Close()` closes the Windows Form.
+* `string messsage;` → Declares a string variable.
+* `+` → Concatenates (joins) strings together.
+* `"Jamhuuriyа" + " University"` → Produces `"Jamhuuriyа University"`.
+* `MessageBox.Show(messsage);` → Displays the message in a pop-up box.
 
-### Key Concepts
-
-* `.Text` → Gets the value from a TextBox.
-* `int.Parse()` → Converts text to an integer.
-* `+` → Joins strings together.
-* `.Clear()` → Removes TextBox content.
-* `this.Close()` → Closes the current form.
-
-### Example Output
+### Output
 
 ```text
-Monday September 28 2026
+Jamhuuriyа University
 ```
